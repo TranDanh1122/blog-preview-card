@@ -12,6 +12,131 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @font-face {
+      font-family: "Figtree";
+      src: url(assets/fonts/Figtree-VariableFont_wght.ttf);
+    }
+
+    @font-face {
+      font-family: "Figtree_Italic";
+      src: url(assets/fonts/Figtree-Italic-VariableFont_wght.ttf);
+    }
+
+    :root {
+      --yellow: hsl(47, 88%, 63%);
+      --white: hsl(0, 0%, 100%);
+      --gray_500: hsl(0, 0%, 42%);
+      --gray_950: hsl(0, 0%, 7%);
+      --content_width: 23vw;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-size: 1.2vw;
+      font-family: "Figtree", sans-serif;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      width: 100%;
+      height: 100%;
+      background-color: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 1.25rem;
+    }
+
+    .card_img {
+      width: var(--content_width);
+      height: auto;
+      aspect-ratio: 1.68;
+      margin: 1.5rem;
+      border-radius: 0.625rem;
+    }
+
+    .card_info {
+      margin: 0px 1.5rem 1.5rem;
+      width: var(--content_width);
+    }
+
+    .card_category {
+      padding: 0.25rem 0.75rem;
+      background-color: var(--yellow);
+      color: var(--gray_950);
+      text-decoration: none;
+      font-weight: bolder;
+      line-height: 150%;
+      font-size: 0.875rem;
+      border-radius: 0.25rem;
+      display: block;
+      width: fit-content;
+    }
+
+    .card_datetime {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 150%;
+      color: var(--gray_950);
+    }
+
+    .card_title {
+      color: var(--gray_950);
+      font-weight: bolder;
+      font-size: 1.5rem;
+      line-height: 150%;
+      cursor: pointer;
+      margin-top: 0.75rem;
+    }
+
+    .card_title:active,
+    .card_title:hover {
+      color: var(--yellow);
+    }
+
+    .card_desc {
+      line-height: 150%;
+      color: var(--gray_500);
+    }
+
+    .card_author {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.75rem;
+      padding: 0px 1.5rem 1.5rem;
+    }
+
+    .card_author>.avatar {
+      width: 2rem;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .card_author .name {
+      font-size: 0.875rem;
+      font-weight: bolder;
+      color: var(--gray_950);
+    }
+
     .attribution {
       font-size: 11px;
       text-align: center;
@@ -20,13 +145,39 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    @media (max-width: 768px) {
+      :root {
+        --content_width: 50vw;
+      }
+    }
+
+    @media (max-width: 375px) {
+      :root {
+        --content_width: 75vw;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <main>
-
+    <div class="card">
+      <img src="assets/images/illustration-article.svg" alt="blog1" class="card_img">
+      <div class="card_info">
+        <a class="card_category" href="#">Learning</a>
+        <span class="card_datetime">Published 06 Dec 2024</span>
+        <!-- h2 because we can have a lot of card -->
+        <h2 class="card_title">HTML & CSS foundations</h2>
+        <p class="card_desc">These languages are the backbone of every website, defining structure, content, and
+          presentation.</p>
+      </div>
+      <div class="card_author">
+        <img src="assets/images/image-avatar.webp" alt="author" class="avatar">
+        <span class="name">Trần Danh</span>
+      </div>
+    </div>
   </main>
 
   <div class="attribution">
