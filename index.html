@@ -28,6 +28,7 @@
       --gray_500: hsl(0, 0%, 42%);
       --gray_950: hsl(0, 0%, 7%);
       --content_width: 23vw;
+      --rem: 16px;
     }
 
     html,
@@ -36,7 +37,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      font-size: 1.2vw;
+      font-size: var(--rem);
       font-family: "Figtree", sans-serif;
     }
 
@@ -149,12 +150,14 @@
     @media (max-width: 768px) {
       :root {
         --content_width: 50vw;
+        --rem: 14px;
       }
     }
 
     @media (max-width: 375px) {
       :root {
-        --content_width: 90vw;
+        --content_width: 75vw;
+        --rem: 12px
       }
     }
   </style>
